@@ -1,0 +1,633 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Libreria
+{
+    public partial class Form1 : Form
+    {
+        const decimal PRECIO_LIBROS_1_3 = 30;
+        const decimal PRECIO_LIBROS_4_6 = 40;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControlGeneral.SelectedTab = tabPageInicio;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControlPedido.SelectedTab = tabPageComprar;
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCalcular_Click(object sender, EventArgs e)
+        {
+            decimal totalPagar = CalcularTotal();
+
+            // Mostrar el total en el label correspondiente
+            labelTotalPedido.Text = $"Total a Pagar: {totalPagar.ToString("C")}";
+        }
+        private decimal CalcularTotal()
+        {
+            decimal totalPagar = 0;
+
+            // Obtener los libros seleccionados
+            foreach (var libro in checkedListBox1.CheckedItems)
+            {
+                int indiceLibro = checkedListBox1.Items.IndexOf(libro);
+
+                if (indiceLibro >= 0 && indiceLibro <= 2)
+                {
+                    totalPagar += PRECIO_LIBROS_1_3;
+                }
+                else if (indiceLibro >= 3 && indiceLibro <= 5)
+                {
+                    totalPagar += PRECIO_LIBROS_4_6;
+                }
+            }
+
+            return totalPagar;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TiendaLibros
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Ir a la pestaña anterior
+            int currentIndex = tabControl1.SelectedIndex;
+            if (currentIndex > 0)
+            {
+                tabControl1.SelectedIndex = currentIndex - 1;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Ir a la siguiente pestaña
+            int currentIndex = tabControl1.SelectedIndex;
+            int tabCount = tabControl1.TabCount;
+            if (currentIndex < tabCount - 1)
+            {
+                tabControl1.SelectedIndex = currentIndex + 1;
+            }
+        }
+    }
+}
+namespace Pantalla_de_pagar
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            Inicio = new TabControl();
+            tabPage3 = new TabPage();
+            tabPage1 = new TabPage();
+            tabPage5 = new TabPage();
+            groupBox2 = new GroupBox();
+            tabControl1 = new TabControl();
+            tabPage10 = new TabPage();
+            tabPage11 = new TabPage();
+            tabPage12 = new TabPage();
+            button4 = new Button();
+            button3 = new Button();
+            textBox4 = new TextBox();
+            domainUpDown4 = new DomainUpDown();
+            textBox5 = new TextBox();
+            button5 = new Button();
+            domainUpDown5 = new DomainUpDown();
+            domainUpDown6 = new DomainUpDown();
+            textBox6 = new TextBox();
+            button9 = new Button();
+            button10 = new Button();
+            label2 = new Label();
+            tabPage6 = new TabPage();
+            Inicio.SuspendLayout();
+            tabPage5.SuspendLayout();
+            groupBox2.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage12.SuspendLayout();
+            SuspendLayout();
+            // 
+            // Inicio
+            // 
+            Inicio.AccessibleDescription = "";
+            Inicio.Controls.Add(tabPage3);
+            Inicio.Controls.Add(tabPage1);
+            Inicio.Controls.Add(tabPage5);
+            Inicio.Controls.Add(tabPage6);
+            Inicio.Location = new Point(12, 42);
+            Inicio.Name = "Inicio";
+            Inicio.SelectedIndex = 0;
+            Inicio.Size = new Size(563, 435);
+            Inicio.TabIndex = 13;
+            Inicio.Tag = "";
+            // 
+            // tabPage3
+            // 
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(555, 407);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Cliente";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(555, 407);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "Almacen";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(groupBox2);
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(555, 407);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Pedido";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(tabControl1);
+            groupBox2.Location = new Point(19, 12);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(517, 383);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Pagar";
+            groupBox2.UseWaitCursor = true;
+            // 
+            // tabControl1
+            // 
+            tabControl1.AccessibleRole = AccessibleRole.OutlineButton;
+            tabControl1.Controls.Add(tabPage10);
+            tabControl1.Controls.Add(tabPage11);
+            tabControl1.Controls.Add(tabPage12);
+            tabControl1.Cursor = Cursors.SizeNESW;
+            tabControl1.Location = new Point(0, 22);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(517, 361);
+            tabControl1.TabIndex = 13;
+            tabControl1.UseWaitCursor = true;
+            // 
+            // tabPage10
+            // 
+            tabPage10.Location = new Point(4, 24);
+            tabPage10.Name = "tabPage10";
+            tabPage10.Padding = new Padding(3);
+            tabPage10.Size = new Size(509, 333);
+            tabPage10.TabIndex = 1;
+            tabPage10.Text = "1.Pedido";
+            tabPage10.UseVisualStyleBackColor = true;
+            tabPage10.UseWaitCursor = true;
+            // 
+            // tabPage11
+            // 
+            tabPage11.Location = new Point(4, 24);
+            tabPage11.Name = "tabPage11";
+            tabPage11.Size = new Size(509, 333);
+            tabPage11.TabIndex = 2;
+            tabPage11.Text = "2.Comprar";
+            tabPage11.UseVisualStyleBackColor = true;
+            tabPage11.UseWaitCursor = true;
+            // 
+            // tabPage12
+            // 
+            tabPage12.BackColor = Color.Transparent;
+            tabPage12.Controls.Add(button4);
+            tabPage12.Controls.Add(button3);
+            tabPage12.Controls.Add(textBox4);
+            tabPage12.Controls.Add(domainUpDown4);
+            tabPage12.Controls.Add(textBox5);
+            tabPage12.Controls.Add(button5);
+            tabPage12.Controls.Add(domainUpDown5);
+            tabPage12.Controls.Add(domainUpDown6);
+            tabPage12.Controls.Add(textBox6);
+            tabPage12.Controls.Add(button9);
+            tabPage12.Controls.Add(button10);
+            tabPage12.Controls.Add(label2);
+            tabPage12.Location = new Point(4, 24);
+            tabPage12.Name = "tabPage12";
+            tabPage12.Size = new Size(509, 333);
+            tabPage12.TabIndex = 3;
+            tabPage12.Text = "3.Pagar";
+            tabPage12.UseWaitCursor = true;
+            tabPage12.Click += tabPage12_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(245, 297);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 15;
+            button4.Text = "Salir";
+            button4.UseVisualStyleBackColor = true;
+            button4.UseWaitCursor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(37, 297);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 14;
+            button3.Text = "Pagar";
+            button3.UseVisualStyleBackColor = true;
+            button3.UseWaitCursor = true;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(154, 226);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(145, 23);
+            textBox4.TabIndex = 13;
+            textBox4.UseWaitCursor = true;
+            // 
+            // domainUpDown4
+            // 
+            domainUpDown4.Location = new Point(3, 227);
+            domainUpDown4.Name = "domainUpDown4";
+            domainUpDown4.Size = new Size(86, 23);
+            domainUpDown4.TabIndex = 12;
+            domainUpDown4.Text = "Documento";
+            domainUpDown4.UseWaitCursor = true;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(154, 173);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(145, 23);
+            textBox5.TabIndex = 11;
+            textBox5.UseWaitCursor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(3, 173);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 10;
+            button5.Text = "Codigo";
+            button5.UseVisualStyleBackColor = true;
+            button5.UseWaitCursor = true;
+            // 
+            // domainUpDown5
+            // 
+            domainUpDown5.Location = new Point(154, 130);
+            domainUpDown5.Name = "domainUpDown5";
+            domainUpDown5.Size = new Size(120, 23);
+            domainUpDown5.TabIndex = 9;
+            domainUpDown5.Text = "Año de exp.";
+            domainUpDown5.UseWaitCursor = true;
+            // 
+            // domainUpDown6
+            // 
+            domainUpDown6.Location = new Point(3, 130);
+            domainUpDown6.Name = "domainUpDown6";
+            domainUpDown6.Size = new Size(120, 23);
+            domainUpDown6.TabIndex = 8;
+            domainUpDown6.Text = "Mes de exp.";
+            domainUpDown6.UseWaitCursor = true;
+            domainUpDown6.Wrap = true;
+            domainUpDown6.SelectedItemChanged += domainUpDown6_SelectedItemChanged_1;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(154, 91);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(120, 23);
+            textBox6.TabIndex = 7;
+            textBox6.UseWaitCursor = true;
+            textBox6.TextChanged += textBox6_TextChanged;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(3, 90);
+            button9.Name = "button9";
+            button9.Size = new Size(129, 23);
+            button9.TabIndex = 6;
+            button9.Text = "Numero de Tarjeta";
+            button9.UseVisualStyleBackColor = true;
+            button9.UseWaitCursor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(3, 47);
+            button10.Name = "button10";
+            button10.Size = new Size(109, 23);
+            button10.TabIndex = 5;
+            button10.Text = "Tarjeta de pago";
+            button10.UseVisualStyleBackColor = true;
+            button10.UseWaitCursor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 16);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 15);
+            label2.TabIndex = 3;
+            label2.Text = "METODO DE PAGO:";
+            label2.UseWaitCursor = true;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Location = new Point(4, 24);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Size = new Size(555, 407);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "Administracion";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(661, 536);
+            Controls.Add(Inicio);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            Inicio.ResumeLayout(false);
+            tabPage5.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage12.ResumeLayout(false);
+            tabPage12.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TabControl Inicio;
+        private TabPage tabPage3;
+        private TabPage tabPage1;
+        private TabPage tabPage5;
+        private TabPage tabPage6;
+        private GroupBox groupBox2;
+        private TabControl tabControl1;
+        private TabPage tabPage10;
+        private TabPage tabPage11;
+        private TabPage tabPage12;
+        private Label label2;
+        private TextBox textBox6;
+        private Button button9;
+        private Button button10;
+        private Button button4;
+        private Button button3;
+        private TextBox textBox4;
+        private DomainUpDown domainUpDown4;
+        private TextBox textBox5;
+        private Button button5;
+        private DomainUpDown domainUpDown5;
+        private DomainUpDown domainUpDown6;
+    }
+}

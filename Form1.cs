@@ -1,37 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Libreria
+namespace Pantalla_de_pagar
 {
     public partial class Form1 : Form
     {
-        const decimal PRECIO_LIBROS_1_3 = 30;
-        const decimal PRECIO_LIBROS_4_6 = 40;
         public Form1()
         {
             InitializeComponent();
         }
-        
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControlGeneral.SelectedTab = tabPageInicio;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tabControlPedido.SelectedTab = tabPageComprar;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,38 +32,64 @@ namespace Libreria
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonCalcular_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            decimal totalPagar = CalcularTotal();
 
-            // Mostrar el total en el label correspondiente
-            labelTotalPedido.Text = $"Total a Pagar: {totalPagar.ToString("C")}";
         }
-        private decimal CalcularTotal()
+
+        private void button6_Click(object sender, EventArgs e)
         {
-            decimal totalPagar = 0;
 
-            // Obtener los libros seleccionados
-            foreach (var libro in checkedListBox1.CheckedItems)
-            {
-                int indiceLibro = checkedListBox1.Items.IndexOf(libro);
+        }
 
-                if (indiceLibro >= 0 && indiceLibro <= 2)
-                {
-                    totalPagar += PRECIO_LIBROS_1_3;
-                }
-                else if (indiceLibro >= 3 && indiceLibro <= 5)
-                {
-                    totalPagar += PRECIO_LIBROS_4_6;
-                }
-            }
+        private void button7_Click(object sender, EventArgs e)
+        {
 
-            return totalPagar;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void domainUpDown6_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void domainUpDown6_SelectedItemChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
